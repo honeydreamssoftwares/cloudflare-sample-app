@@ -86,7 +86,7 @@ router.post('/', async (request, env) => {
         let responseContent;
         if (twitterName) {
           // If a Twitter name exists in the KV store for the user
-          responseContent = `Your Twitter name is: @${twitterName}`;
+          responseContent = `Your Twitter name is: @${twitterName} https://twitter.com/${twitterName}`;
         } else {
           // If no Twitter name was found for the user in the KV store
           responseContent =
