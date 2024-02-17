@@ -80,10 +80,11 @@ router.post('/', async (request, env) => {
         });
       }
       case LIST_COMMAND.name.toLowerCase(): {
+        const userName = interaction.member.user.username;
         return new JsonResponse({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
-            content: 'Under Maintainance',
+            content: `${userName},the feature is currently under maintenance.`,
           },
         });
       }
