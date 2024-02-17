@@ -8,7 +8,7 @@ import {
   InteractionType,
   verifyKey,
 } from 'discord-interactions';
-import { AWW_COMMAND, INVITE_COMMAND } from './commands.js';
+import { AWW_COMMAND, INVITE_COMMAND, LIST_COMMAND } from './commands.js';
 import { getCuteUrl } from './reddit.js';
 import { InteractionResponseFlags } from 'discord-interactions';
 
@@ -76,6 +76,14 @@ router.post('/', async (request, env) => {
           data: {
             content: INVITE_URL,
             flags: InteractionResponseFlags.EPHEMERAL,
+          },
+        });
+      }
+      case LIST_COMMAND.toLowerCase(): {
+        return new JsonResponse({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            content: 'Under Maintainance',
           },
         });
       }
