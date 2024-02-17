@@ -81,10 +81,21 @@ router.post('/', async (request, env) => {
       }
       case LIST_COMMAND.name.toLowerCase(): {
         const userName = interaction.member.user.username;
+        const twitterName = await env.DEFAULTCODERBOT.get(userName);
+
+        let responseContent;
+        if (twitterName) {
+          // If a Twitter name exists in the KV store for the user
+          responseContent = `Your Twitter name is: @${twitterName}`;
+        } else {
+          // If no Twitter name was found for the user in the KV store
+          responseContent =
+            "It seems like your Twitter name hasn't been set up yet.";
+        }
         return new JsonResponse({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
-            content: `${userName},the feature is currently under maintenance.`,
+            content: `${userName}, ${responseContent}`,
           },
         });
       }

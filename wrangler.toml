@@ -6,3 +6,7 @@ compatibility_date="2023-05-18"
 # DISCORD_TOKEN
 # DISCORD_PUBLIC_KEY
 # DISCORD_APPLICATION_ID
+
+kv_namespaces = [
+  { binding = "DEFAULTCODERBOT", id = "f3e9811f337941d4bf75b764f50d2b76" }
+]
