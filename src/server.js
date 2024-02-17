@@ -79,7 +79,7 @@ router.post('/', async (request, env) => {
           },
         });
       }
-      case LIST_COMMAND.toLowerCase(): {
+      case LIST_COMMAND.name.toLowerCase(): {
         return new JsonResponse({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
