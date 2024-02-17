@@ -13,7 +13,7 @@ export const INVITE_COMMAND = {
   description: 'Get an invite link to add the bot to your server',
 };
 
-export const LIST_COMMAND = {
-  name: 'listusers',
-  description: 'Lists Twitter user Ids of this server',
+export const MY_TWITTER_COMMAND = {
+  name: 'mytwitter',
+  description: 'Shows your linked Twitter ID for this server',
 };

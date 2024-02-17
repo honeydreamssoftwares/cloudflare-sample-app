@@ -8,7 +8,7 @@ import {
   InteractionType,
   verifyKey,
 } from 'discord-interactions';
-import { AWW_COMMAND, INVITE_COMMAND, LIST_COMMAND } from './commands.js';
+import { AWW_COMMAND, INVITE_COMMAND, MY_TWITTER_COMMAND } from './commands.js';
 import { getCuteUrl } from './reddit.js';
 import { InteractionResponseFlags } from 'discord-interactions';
 
@@ -79,7 +79,7 @@ router.post('/', async (request, env) => {
           },
         });
       }
-      case LIST_COMMAND.name.toLowerCase(): {
+      case MY_TWITTER_COMMAND.name.toLowerCase(): {
         const userName = interaction.member.user.username;
         const twitterName = await env.DEFAULTCODERBOT.get(userName);
 
