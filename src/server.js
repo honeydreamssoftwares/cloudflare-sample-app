@@ -59,8 +59,8 @@ router.post('/', async (request, env) => {
     // Most user commands will come as `APPLICATION_COMMAND`.
     switch (interaction.data.name.toLowerCase()) {
       case AWW_COMMAND.name.toLowerCase(): {
-        const cuteUrl = await getCuteUrl();
-        //const cuteUrl = 'I am sleeping DND ZZZZZZ' + cuteUrl_orig;
+        const cuteUrl_orig = await getCuteUrl();
+        const cuteUrl = 'I am sleeping DND ZZZZZZ' + cuteUrl_orig;
         return new JsonResponse({
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           data: {
