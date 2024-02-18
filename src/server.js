@@ -108,7 +108,7 @@ router.post('/', async (request, env) => {
         const today = new Date();
         const dayOfWeek = today.getDay();
         const agendaKey = `agenda${dayOfWeek + 1}`; // Adjust for 0-indexed getDay() where 0 is Sunday, to match your 1-indexed keys
-        const agendaContent = await env.defaultcoderweeklyagenda.get(agendaKey);
+        const agendaContent = await env.DEFAULTCODERWEEKLYAGENDA.get(agendaKey);
 
         let responseContent;
         if (agendaContent) {

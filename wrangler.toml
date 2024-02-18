@@ -8,5 +8,6 @@ compatibility_date="2023-05-18"
 # DISCORD_APPLICATION_ID
 
 kv_namespaces = [
-  { binding = "DEFAULTCODERBOT", id = "f3e9811f337941d4bf75b764f50d2b76" }
+  { binding = "DEFAULTCODERBOT", id = "f3e9811f337941d4bf75b764f50d2b76" },
+  { binding = "DEFAULTCODERWEEKLYAGENDA", id = "b7cf151361bc493aaf6cb5a6c5cd2260" }
 ]
