@@ -8,7 +8,12 @@ import {
   InteractionType,
   verifyKey,
 } from 'discord-interactions';
-import { AWW_COMMAND, INVITE_COMMAND, MY_TWITTER_COMMAND } from './commands.js';
+import {
+  AWW_COMMAND,
+  INVITE_COMMAND,
+  MY_TWITTER_COMMAND,
+  AGENDA_COMMAND,
+} from './commands.js';
 import { getCuteUrl } from './reddit.js';
 import { InteractionResponseFlags } from 'discord-interactions';
 
@@ -99,6 +104,27 @@ router.post('/', async (request, env) => {
           },
         });
       }
+      case AGENDA_COMMAND.name.toLowerCase(): {
+        const today = new Date();
+        const dayOfWeek = today.getDay();
+        const agendaKey = `agenda${dayOfWeek + 1}`; // Adjust for 0-indexed getDay() where 0 is Sunday, to match your 1-indexed keys
+        const agendaContent = await env.defaultcoderweeklyagenda.get(agendaKey);
+
+        let responseContent;
+        if (agendaContent) {
+          responseContent = `Today's Agenda: ${agendaContent}`;
+        } else {
+          responseContent = 'No agenda found for today.Enjoy';
+        }
+
+        return new JsonResponse({
+          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+          data: {
+            content: responseContent,
+          },
+        });
+      }
+
       default:
         return new JsonResponse({ error: 'Unknown Type' }, { status: 400 });
     }

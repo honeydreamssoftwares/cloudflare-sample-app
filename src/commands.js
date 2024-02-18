@@ -17,3 +17,8 @@ export const MY_TWITTER_COMMAND = {
   name: 'mytwitter',
   description: 'Shows your linked Twitter ID for this server',
 };
+
+export const AGENDA_COMMAND = {
+  name: 'agenda',
+  description: 'Shows todays Agenda for this server',
+};

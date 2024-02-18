@@ -1,4 +1,9 @@
-import { AWW_COMMAND, INVITE_COMMAND, MY_TWITTER_COMMAND } from './commands.js';
+import {
+  AWW_COMMAND,
+  INVITE_COMMAND,
+  MY_TWITTER_COMMAND,
+  AGENDA_COMMAND,
+} from './commands.js';
 import dotenv from 'dotenv';
 import process from 'node:process';
 
@@ -34,7 +39,12 @@ const response = await fetch(url, {
     Authorization: `Bot ${token}`,
   },
   method: 'PUT',
-  body: JSON.stringify([AWW_COMMAND, INVITE_COMMAND, MY_TWITTER_COMMAND]),
+  body: JSON.stringify([
+    AWW_COMMAND,
+    INVITE_COMMAND,
+    MY_TWITTER_COMMAND,
+    AGENDA_COMMAND,
+  ]),
 });
 
 if (response.ok) {
