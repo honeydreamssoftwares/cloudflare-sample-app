@@ -13,7 +13,8 @@
     "fix": "eslint --fix '**/*.js'",
     "lint": "eslint '**/*.js'",
     "register": "node src/register.js",
-    "publish": "wrangler deploy"
+    "publish": "wrangler deploy",
+    "climessage":"node src/cli.js 1208158953284968599  'sent from a VSCode CLI'"
   },
   "keywords": [],
   "author": "Justin Beckwith <justin.beckwith@gmail.com>",
